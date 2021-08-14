@@ -1,0 +1,9 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 300px;
+
+  list-style: none;
+  border: black 1px solid;
+}
