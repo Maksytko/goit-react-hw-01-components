@@ -4,7 +4,16 @@ import FriendListItem from "../Friend-list-item/Friend-list-item";
 function FriendList({ friends }) {
   return (
     <ul>
-      <FriendListItem friends={friends} />
+      {friends.map((friend) => {
+        return (
+          <FriendListItem
+            avatar={friend.avatar}
+            name={friend.name}
+            isOnline={friend.isOnline}
+            key={friend.id}
+          />
+        );
+      })}
     </ul>
   );
 }

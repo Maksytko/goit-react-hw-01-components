@@ -1,25 +1,18 @@
 import style from "./Friend-list-item.module.css";
 
-function FriendListItem({ friends }) {
-  return friends.map((friend) => {
-    return (
-      <li className={style.item} key={friend.id}>
-        <span
-          className={style.status}
-          style={{ color: friend.isOnline ? "green" : "red" }}
-        >
-          {friend.isOnline ? "Online" : "Offline"}
-        </span>
-        <img
-          className="avatar"
-          src={friend.avatar}
-          alt={friend.name}
-          width="48"
-        />
-        <p className="name">{friend.name}</p>
-      </li>
-    );
-  });
+function FriendListItem({ avatar, name, isOnline }) {
+  return (
+    <li className={style.item}>
+      <span
+        className={style.status}
+        style={{ color: isOnline ? "green" : "red" }}
+      >
+        {isOnline ? "Online" : "Offline"}
+      </span>
+      <img className="avatar" src={avatar} alt={name} width="48" />
+      <p className="name">{name}</p>
+    </li>
+  );
 }
 
 export default FriendListItem;
